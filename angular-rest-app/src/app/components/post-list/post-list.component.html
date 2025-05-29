@@ -1,0 +1,42 @@
+<div class="row border-bottom border-primary my-4">
+    <div class="col"><h2>Posts</h2></div>
+    <div class="col text-end"><button class="btn btn-sm btn-primary" routerLink="/posts/create">Nuevo Post</button></div>
+</div>
+
+@if (loading) {
+    <div>Cargando posts...</div>
+}
+
+@if (error) {
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+        <button (click)="loadPosts()">Recargar</button>
+    </div>
+}
+
+@if (!loading && !error && posts.length > 0) {
+    <ul>
+        @for (post of posts; track post.id) {
+            <li>
+                <h5>{{ post.title }}</h5>
+                <p>{{ post.body }}</p>
+                <button class="btn btn-sm btn-success me-2" [routerLink]="['/posts/edit', post.id]">Editar</button>
+                <button class="btn btn-sm btn-danger" (click)="onDeletePost(post.id)" [disabled]="deleteLoading">
+                    @if (deleteLoading) {
+                        <span >Borrando...</span>    
+                    } @else {
+                        <span>Borrar</span>
+                    }
+                </button>
+                @if (deleteError) {
+                    <div class="alert alert-danger" role="alert">{{ deleteError }}</div>
+                }
+                <hr/>
+            </li>
+        }
+    </ul>
+}
+
+@if (!loading && !error && posts.length === 0) {
+    <div class="alert alert-secondary" role="alert">No hay post disponibles.</div>
+}

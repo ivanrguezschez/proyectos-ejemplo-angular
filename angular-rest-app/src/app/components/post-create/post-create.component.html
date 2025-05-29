@@ -1,0 +1,33 @@
+<div class="row border-bottom border-primary my-4">
+    <div class="col"><h2>{{ getFormTitle() }}</h2></div>
+    <div class="col text-end"><button class="btn btn-sm btn-outline-secondary" routerLink="/posts">Volver</button></div>
+</div>
+
+@if (operationStatus === 'error') {
+    <div class="alert alert-danger" role="alert">{{ errorMessage }}</div>
+}
+
+<form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
+    @if (isEditMode) {
+        <div class="mb-3">
+            <label for="id" class="form-label">Post ID</label>
+            <input type="text" id="id" name="id" class="form-control" [(ngModel)]="currentPost.id" readonly>
+        </div>
+    }
+    <div class="mb-3">
+        <label for="title" class="form-label">Título</label>
+        <input type="text" id="title" name="title" class="form-control" [(ngModel)]="currentPost.title" required>
+    </div>
+    <div class="mb-3">
+        <label for="body" class="form-label">Cuerpo</label>
+        <textarea id="body" name="body" class="form-control" [(ngModel)]="currentPost.body" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary" [disabled]="operationStatus === 'loading'">
+        {{ getSubmitButtonText() }}
+    </button>
+    @if (operationStatus === 'success') {
+         <div class="alert alert-success mt-4" role="alert">
+            Post {{ isEditMode ? 'actualizado' : 'creado' }} correctamente!
+        </div>
+    }
+</form>
