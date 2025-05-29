@@ -1,0 +1,16 @@
+{
+    "photos": [
+        { "id": "1", "name": "Photo 1", "url": "https://cdn.pixabay.com/photo/2023/06/11/13/14/boathouse-8055954_960_720.jpg" },
+        { "id": "2", "name": "Photo 2", "url": "https://cdn.pixabay.com/photo/2024/01/04/21/54/volcano-8488486_960_720.jpg" },
+        { "id": "3", "name": "Photo 3", "url": "https://cdn.pixabay.com/photo/2023/12/15/22/37/mountains-8451480_960_720.jpg" },
+        { "id": "4", "name": "Photo 4", "url": "https://cdn.pixabay.com/photo/2024/05/22/16/37/seagull-8781110_960_720.jpg" },
+        { "id": "5", "name": "Photo 5", "url": "https://cdn.pixabay.com/photo/2023/12/12/13/28/waterfall-8445292_960_720.jpg" },
+        { "id": "6", "name": "Photo 6", "url": "https://cdn.pixabay.com/photo/2023/12/19/21/52/trees-8458466_960_720.jpg" },
+        { "id": "7", "name": "Photo 7", "url": "https://cdn.pixabay.com/photo/2024/01/10/11/09/mountain-8499331_960_720.jpg" },
+        { "id": "8", "name": "Photo 8", "url": "https://cdn.pixabay.com/photo/2023/09/10/11/11/storm-8244663_960_720.jpg" },
+        { "id": "9", "name": "Photo 9", "url": "https://cdn.pixabay.com/photo/2023/11/03/15/03/waterfall-8363216_960_720.jpg" },
+        { "id": "10", "name": "Photo 10", "url": "https://cdn.pixabay.com/photo/2023/06/02/10/06/nature-8035211_960_720.jpg" },
+        { "id": "11", "name": "Photo 11", "url": "https://cdn.pixabay.com/photo/2024/02/23/21/25/landscape-8592826_960_720.jpg" },
+        { "id": "12", "name": "Photo 12", "url": "https://cdn.pixabay.com/photo/2023/05/22/10/49/houses-8010401_960_720.jpg" }
+    ]
+}
