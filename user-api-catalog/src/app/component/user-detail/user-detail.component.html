@@ -1,0 +1,89 @@
+<div class="main-body">
+  <div class="row mb-4">
+    <div class="col">
+      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/users">&#8592; Volver a usuarios</button>
+    </div>
+  </div>      
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img [src]="user.imageUrl" alt="Admin" class="rounded-circle" width="110" />
+            <div class="mt-3">
+              <h4>{{ user.firstName }} {{ user.lastName }}</h4>
+              <p class="fw-light mb-1">{{ user.username }}</p>
+              <p class="fw-light">ID: {{ user.uuid }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-3">
+            <label for="firstName" class="col-sm-3 col-form-label fw-bold">Nombre</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="firstName" [disabled]="mode === 'locked'" [value]="user.firstName" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="lastName" class="col-sm-3 col-form-label fw-bold">Apellido</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="lastName" [disabled]="mode === 'locked'" [value]="user.lastName" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="dateOfBirth" class="col-sm-3 col-form-label fw-bold">Fecha de Nacimiento</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="dateOfBirth" [disabled]="mode === 'locked'" value="{{ user.dateOfBirth | date : 'dd/MM/yyyy' }}" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="email" class="col-sm-3 col-form-label fw-bold">Email</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="email" [disabled]="mode === 'locked'" [value]="user.email" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="phone" class="col-sm-3 col-form-label fw-bold">Teléfono</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="phone" [disabled]="mode === 'locked'" [value]="user.phone" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="gender" class="col-sm-3 col-form-label fw-bold">Genero</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="gender" [disabled]="mode === 'locked'" [value]="user.gender" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="address" class="col-sm-3 col-form-label fw-bold">Dirección</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="address" [disabled]="mode === 'locked'" [value]="user.address" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+              <button type="button" class="btn btn-sm btn-primary" (click)="changeMode(mode)">
+                {{ buttonText }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="d-flex align-items-center mb-3">Localización del Usuario</h5>
+              <div id="map" class="border"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
