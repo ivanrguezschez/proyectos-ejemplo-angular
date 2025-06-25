@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        @for (photo of photoList; track photo.id) {
+            <div class="col-4">
+                <app-photo [photo]="photo"/>
+            </div>
+        } @empty {
+            <div class="alert alert-danger">
+                <p class="m-0 p-0">
+                    No se ha registrado fotografías por el momento o, bien se produjo un error. Por favor, contacte con el administrador.
+                </p>
+            </div>
+        }
+    </div>
+</div>
