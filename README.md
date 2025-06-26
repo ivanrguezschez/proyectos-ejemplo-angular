@@ -12,3 +12,6 @@ Proyecto de cliente angular consumiendo una REST API de un catalogo de usuarios 
 
 ## ecommerce-store
 Proyecto de ejemplo de tienda de comercio electrónico con angular 17 y tailwindcss.
+
+## my-angular-bootstrap-app
+Proyecto de ejemplo de tienda de productos con angular 16 y bootstrap.

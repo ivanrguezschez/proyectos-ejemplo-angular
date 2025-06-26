@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h1>Products</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" class="align-middle">
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.title }}</td>
+        <td>{{ product.category }}</td>
+        <td [ngClass]="{ 'text-danger': product.price > 5 }">
+          {{ product.price | currency }}
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            [routerLink]="['/products', product.id]"
+          >
+            View Detail
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
