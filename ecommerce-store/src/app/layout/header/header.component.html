@@ -1,0 +1,39 @@
+<header class="text-gray-600 body-font bg-slate-200">
+  <div class="container mx-auto py-4 flex flex-row items-center">
+    <a class="title-font font-medium text-gray-900 mr-5" routerLink="/">
+      <span class="text-xl">IRS ECOMMERCE STORE</span>
+    </a>
+    <nav class="flex items-center grow">
+      <a class="mr-5 hover:text-gray-900" routerLink="/product-list">Products</a>
+      <div class="flex grow justify-end" >
+        <a class="relative hover:text-gray-900" routerLink="/checkout" (mouseenter)="showCart.set(true)" (mouseleave)="showCart.set(false)">
+          <svg class="h-8 w-8 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          </svg>
+          @if (cartStore.productCount()) {  
+            <span class="absolute top-0 right-0 flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">{{ cartStore.productCount() }}</span>  
+          }
+        </a>
+        @if (showCart() && cartStore.productCount()) {
+          <div class="absolute p-4 mt-8 rounded-md bg-slate-200 border border-gray-900 z-30" [ngClass]="{'show-cart-animation': showCart()}">
+            @for (product of cartStore.products(); track $index) {
+              <div class="flex flex-col">
+                <div class="flex gap-x-2">
+                  <span>{{ product.qty }}</span>
+                  <span class="grow">{{ product.title }}</span>
+                  <span>{{ product.qty * product.price | currency }}</span>
+                </div>
+              </div>
+            }
+            <hr class="my-3 border-gray-900 border-t-1"/>
+            <div class="flex justify-end">
+                <span class="font-bold">TOTAL {{ cartStore.totalAmount() | currency }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </nav>
+  </div>
+</header>

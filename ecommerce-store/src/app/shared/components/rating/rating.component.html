@@ -1,0 +1,13 @@
+<div class="flex mb-4">
+  <span class="flex items-center">
+    @for (star of stars; track index; let index = $index) {
+      <span [innerHTML]="generateStarSvg(index)"></span>
+    }
+    <span class="text-gray-600 ml-3">
+      {{ rating()?.rate }}
+    </span>
+    <span class="text-gray-600 ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+      {{ rating()?.count }} Reviews
+    </span>
+  </span>
+</div>

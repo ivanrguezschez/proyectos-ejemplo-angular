@@ -9,3 +9,6 @@ Proyecto de cliente angular consumiendo una REST API de jsonplaceholder con angu
 
 ## user-api-catalog
 Proyecto de cliente angular consumiendo una REST API de un catalogo de usuarios aleatorios con angular 19 y bootstrap.
+
+## ecommerce-store
+Proyecto de ejemplo de tienda de comercio electrónico con angular 17 y tailwindcss.
